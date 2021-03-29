@@ -1,0 +1,27 @@
+{
+  "config": {
+    "branch": "main",
+    "domain": "https://zhousanfu.github.io",
+    "email": "215817301@qq.com",
+    "platform": "github",
+    "privateKey": "",
+    "repository": "zhousanfu.github.io",
+    "token": "Mfk215817301",
+    "username": "zhousanfu"
+  },
+  "comment": {
+    "commentPlatform": "gitalk",
+    "disqusSetting": {
+      "api": "",
+      "apikey": "",
+      "shortname": ""
+    },
+    "gitalkSetting": {
+      "clientId": "c6ee5268f7a26d575617",
+      "clientSecret": "edaa9fe2b5589b77d216f14daa01224658abf234",
+      "owner": "zhousanfu",
+      "repository": "zhousanfu.github.io"
+    },
+    "showComment": true
+  }
+}

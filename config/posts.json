@@ -1,0 +1,276 @@
+{
+  "posts": [
+    {
+      "content": "省去环境配置过程\r\n\r\n[Google Colaboratory](https://colab.research.google.com/drive/12cnLVS4Ye_dIfEcuI0fQqWwzPeJzLRaB#scrollTo=iyruKALOIQzj)",
+      "data": {
+        "title": "colab matplotlib 快速使用",
+        "date": "2021-03-16 12:46:55",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "colab-matplotlib-kuai-su-shi-yong"
+    },
+    {
+      "content": "\r\n# 个人信息\r\n\r\n - 周三甫/男/1998 \r\n - 大学：java软件开发 \r\n - 工作年限：2年\r\n - 技术博客：https://zhousanfu.github.io\r\n - Github：https://github.com/zhousanfu (有原创repo)\r\n\r\n\r\n# 工作经历\r\n（工作经历按逆序排列，最新的在最前边，按公司做一级分组，公司内按二级分组）\r\n\r\n## ABC公司 （ 2012年9月 ~ 2014年9月 ）\r\n\r\n### DEF项目 \r\n我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。\r\n\r\n\r\n### GHI项目 \r\n我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。\r\n\r\n\r\n### 其他项目\r\n\r\n（每个公司写2~3个核心项目就好了，如果你有非常大量的项目，那么按分类进行合并，每一类选一个典型写出来。其他的一笔带过即可。）\r\n\r\n  \r\n  \r\n# 技能清单\r\n以下均为我熟练使用的技能\r\n- 框架：Django/Tensorflow\r\n- 编程语言：Java/Python\r\n- 版本管理：Git\r\n- 数据库相关：Mysql/Oracle/Hive/Hadoop/\r\n- 云和开放平台：SAE/BAE/AWS/微信应用开发\r\n\r\n",
+      "data": {
+        "title": "XX",
+        "date": "2021-03-09 12:14:35",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "xx"
+    },
+    {
+      "content": "[zhousanfu/Tensorflow_Demo](https://github.com/zhousanfu/Tensorflow_Demo)\r\n\r\n一、安装\r\n\r\n- [Mac M1芯片安装教程](https://towardsdatascience.com/tensorflow-2-4-on-apple-silicon-m1-installation-under-conda-environment-ba6de962b3b8)\r\n\r\n```sql\r\n# M1芯片配适版-Miniconda\r\nwget -c \"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh\"\r\nsh Miniforge3-MacOSX-arm64.sh\r\n\r\n# Install specific pip version and some other base packages\r\npip install --force pip==20.2.4 wheel setuptools cached-property six\r\n# Install all the packages provided by Apple but TensorFlow\r\npip install --upgrade --no-dependencies --force numpy-1.18.5-cp38-cp38-macosx_11_0_arm64.whl grpcio-1.33.2-cp38-cp38-macosx_11_0_arm64.whl h5py-2.10.0-cp38-cp38-macosx_11_0_arm64.whl tensorflow_addons-0.11.2+mlcompute-cp38-cp38-macosx_11_0_arm64.whl\r\n# Install additional packages\r\npip install absl-py astunparse flatbuffers gast google_pasta keras_preprocessing opt_einsum protobuf tensorflow_estimator termcolor typing_extensions wrapt wheel tensorboard typeguard\r\n# Install TensorFlow\r\npip install --upgrade --force --no-dependencies tensorflow_macos-0.1a1-cp38-cp38-macosx_11_0_arm64.whl\r\n```",
+      "data": {
+        "title": "Tensorflow2 核心基础",
+        "date": "2021-02-09 11:28:07",
+        "tags": [
+          "Tensorflow"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "tensorflow-ji-chu-he-xin"
+    },
+    {
+      "content": "# **bert单语种模型训练与部署**\r\n\r\nTag: bert训练与部署Flask API接口\r\n\r\n> bert训练与部署Flask API接口;bert在单语种的准确率较高，但训练与使用占用资源过大，可考虑跨语言模型：XLM\r\n\r\n# **一、文件说明**\r\n\r\n配置文件(bert_config.json)：用于指定模型的超参数 词典文件(vocab.txt)：用于WordPiece 到 Word id的映射 Tensorflow checkpoint（bert_model.ckpt）：包含了预训练模型的权重（实际包含三个文件）\r\n\r\n# **二、BERT结构**\r\n\r\n第一阶段：Pre-training，利用无标记的语料训练一个语言模型； 第二阶段：Fine-tuning, 利用预训练好的语言模型，完成具体的NLP下游任务。（run_classifier.py和run_squad.py） extract_features.py-提取特征向量的\r\n\r\n# **三、运行**\r\n\r\n## **3.1训练：**\r\n\r\nrun_classifier.py 解说[[https://blog.csdn.net/weixin_41845265/article/details/107071939](https://blog.csdn.net/weixin_41845265/article/details/107071939)] 最全详细：[[https://blog.csdn.net/weixin_43320501/article/details/93894946?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control](https://blog.csdn.net/weixin_43320501/article/details/93894946?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)]\r\n\r\n```\r\ncheckpoint 记录可用的模型信息\r\neval_results.txt 验证集的结果信息\r\neval.tf_record 记录验证集的二进制信息\r\nevents.out.tfevents.1590500393.instance-py09166k 用于tensorboard查看详细信息\r\ngraph.pbtxt 记录tensorflow的结构信息\r\nlabel2id.pkl 标签信息 （额外加的）\r\nmodel.ckpt-0* 这里是记录最近的三个文件\r\nmodel.ckpt-2250.data 所有变量的值\r\nmodel.ckpt-2250.index 可能是用于映射图和权重关系，0.11版本后引入\r\nmodel.ckpt-2250.meta 记录完整的计算图结构\r\npredict.tf_record 预测的二进制文件\r\ntest_results.tsv 使用预测后生成的预测结果\r\n\r\n```\r\n\r\n```\r\nexport BERT_BASE_DIR=./chinese_L-12_H-768_A-12#这里是存放中文模型的路径\r\nexport DATA_DIR=./data  #这里是存放数据的路径\r\n\r\npython3 run_classifier.py \\\r\n--task_name=my \\     #这里是processor的名字\r\n--do_train=true \\    #是否训练\r\n--do_eval=true  \\    #是否验证\r\n--do_predict=false \\  #是否预测（对应test）\r\n--do_lower_case=false \\\r\n--data_dir=$DATA_DIR \\\r\n--vocab_file=$BERT_BASE_DIR/vocab.txt \\\r\n--bert_config_file=$BERT_BASE_DIR/bert_config.json \\\r\n--init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \\\r\n--max_seq_length=512 \\最大文本程度，最大512\r\n--train_batch_size=4 \\\r\n--learning_rate=2e-5 \\\r\n--num_train_epochs=15 \\\r\n--output_dir=./mymodel #输出目录\r\n\r\n```\r\n\r\n## **3.2模型压缩**\r\n\r\n> 运行后会在输出文件夹中多出一个 classification_model.pb 文件, 就是压缩后的模型\r\n\r\n```\r\npython freeze_graph.py \\\r\n    -bert_model_dir=\"bert预训练模型地址\" \\\r\n    -model_dir=\"模型输出地址(和上边模型训练输出地址一样即可)\" \\\r\n    -max_seq_len=128 \\  # 序列长度, 需要与训练时 max_seq_length 参书相同\r\n    -num_labels=3  # label数量\r\n\r\n```\r\n\r\n## **3.3服务部署(bert-base)**\r\n\r\n```\r\npip install bert-base==0.0.7 -i https://pypi.python.org/simple\r\nbert-base-serving-start \\\r\n    -model_dir \"训练好的模型路径\" \\\r\n    -bert_model_dir \"bert预训练模型路径\" \\\r\n    -model_pb_dir \"classification_model.pb文件路径\" \\\r\n    -mode CLASS \\  # 模式, 咱们是分类所以用CLASS\r\n    -max_seq_len 128 \\  # 序列长度与上边保持一致\r\n    -port 7006 \\  # 端口号, 不要与其他程序冲突\r\n    -port_out 7007 # 端口号\r\n\r\n```\r\n\r\n## **3.4部署测试调用**\r\n\r\n```\r\nfrom bert_base.client import BertClient\r\nstr1=\"我爱北京天安门\"\r\nstr2 = \"哈哈哈哈\"\r\nwith BertClient(show_server_config=False, check_version=False, check_length=False, mode=\"CLASS\", port=5575, port_out=5576) as bc:\r\n    res = bc.encode([str1, str2])\r\nprint(res)\r\n[{'pred_label': ['2', '1'], 'score': [0.9999899864196777, 0.9999299049377441]}]\r\n\r\n```\r\n\r\n## **3.5报错bert_base/server/http.py：**\r\n\r\n```\r\nsudo pip install flask\r\nsudo pip install flask_compress\r\nsudo pip install flask_cors\r\nsudo pip install flask_json\r\n\r\n```\r\n\r\n##　3.7预测（测试）：\r\n\r\n> TRAINED_CLASSIFIER为刚刚训练的输出目录，无需在进一步指定模型模型名称，否则分类结果会不对\r\n\r\n```\r\nexport BERT_BASE_DIR=./chinese_L-12_H-768_A-12\r\nexport DATA_DIR=./mymodel\r\nexport ./mymodel\r\npython3 run_classifier.py \\\r\n  --task_name=chi \\\r\n  --do_predict=true \\\r\n  --data_dir=$DATA_DIR \\\r\n  --vocab_file=$BERT_BASE_DIR/vocab.txt \\\r\n  --bert_config_file=$BERT_BASE_DIR/bert_config.json \\\r\n  --init_checkpoint=$TRAINED_CLASSIFIER \\\r\n  --max_seq_length=512 \\\r\n  --output_dir=./mymodel\r\n\r\npython3 /home/zhousanfu/bert_classifier/run_classifier.py --task_name=imodis --do_predict=True --do_lower_case=False --data_dir=/data1/zhousanfu/imo_v1 --vocab_file=/data1/zhousanfu/multi_cased_L-12_H-768_A-12/vocab.txt --bert_config_file=/data1/zhousanfu/multi_cased_L-12_H-768_A-12/bert_config.json --init_checkpoint=/data1/zhousanfu/multi_cased_L-12_H-768_A-12/bert_model.ckpt --max_seq_length=128 --output_dir=/data1/zhousanfu/imo_v7\r\n\r\n```\r\n\r\n## **3.8 另一种服务TF-serving 部署模型[[https://blog.csdn.net/qq_42693848/article/details/107235688](https://blog.csdn.net/qq_42693848/article/details/107235688)]**\r\n\r\n- ([https://blog.csdn.net/JerryZhang__/article/details/85107506?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.control](https://blog.csdn.net/JerryZhang__/article/details/85107506?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-5.control))\r\n\r\n> 使用docker下载tfserving镜像\r\n\r\n```\r\ndocker pull tensorflow/serving:2.1.0  # 这里下载的是tf2.1.0的版本，支持tensorflow1.15以上训练出来的模型。\r\ndocker run\r\n    -p 8501:8501\r\n    -p 8500:8500\r\n    --mount type=bind,source=/my/model/path/m,target=/models/m\r\n    -e MODEL_NAME=m\r\n    -t tensorflow/serving:2.1.0\r\n上面的命令中：\r\n(1)-p 8501:8501是端口映射，是将容器的8501端口映射到宿主机的8501端口，后面预测的时候使用该端口；\r\n(2)-e MODEL_NAME=testnet 设置模型名称；\r\n(3)--mount type=bind,source=/tmp/testnet,target=/models/testnet 是将宿主机的路径/tmp/testnet挂载到容器的/models/testnet下。/tmp/testnet是存放的是上述准备工作中保存的模型文件，‘testnet’是模型名称，包含一个.pb文件和一个variables文件夹，在/tmp/testnet下新建一个以数字命名的文件夹，如100001，并将模型文件放到该文件夹中。容器内部会根据绑定的路径读取模型文件；\r\n(4)-t tensorflow/serving 根据名称“tensorflow/serving”运行容器；\r\n\r\n$ docker run -p 8501:8501 --mount type=bind,source=/tmp/testnet,target=/models/testnet  -e MODEL_NAME=bert_NLP_\r\n```",
+      "data": {
+        "title": "BERT 模型文本分类训练与部署",
+        "date": "2021-01-26 16:32:39",
+        "tags": [
+          "NLP"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "nlp-bert-mo-xing-xun-lian-zhi-bu-shu"
+    },
+    {
+      "content": "# **简单使用**\r\n\r\n1. 安装软件：brew install 软件名，例：brew install wget\r\n2. 搜索软件：brew search 软件名，例：brew search wget\r\n3. 卸载软件：brew uninstall 软件名，例：brew uninstall wget\r\n4. 更新所有软件：brew update\r\n5. 更新具体软件：brew upgrade 软件名 ，例：brew upgrade git\r\n6. 显示已安装软件：brew list\r\n7. 查看软件信息：brew info／home 软件名 ，例：brew info git ／ brew home git\r\n8. PS：brew home指令是用浏览器打开官方网页查看软件信息\r\n9. 查看哪些已安装的程序需要更新： brew outdated\r\n10. 显示包依赖：brew reps\r\n11. 显示帮助：brew help\r\n\r\n# 二、ARM X86安装与配置\r\n\r\n### Arm版安装：\r\n\r\n```bash\r\ncd /opt # 切换到 /opt 目录\r\nmkdir homebrew # 创建 homebrew 目录\r\nsudo chown -R $(whoami) /opt/homebrew # 修改目录所属用户\r\ncurl -L [https://github.com/Homebrew/brew/tarball/master](https://github.com/Homebrew/brew/tarball/master) | tar xz --strip 1 -C homebrew\r\n```\r\n\r\n### 卸载命令\r\n\r\n```bash\r\n/usr/bin/ruby -e \"(surl -fsSL https://...)\"\r\n```\r\n\r\n### intel版的安装：\r\n\r\n```bash\r\n```shell\r\n\r\narch -x86_64 /bin/bash -c \"$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/master/install.sh](https://raw.githubusercontent.com/Homebrew/install/master/install.sh))\"\r\n\r\n```\r\n```\r\n\r\n### 环境变量设置\r\n\r\n```bash\r\n#vim ~/.zshrc 或者 vim ~/.bash_profile\r\n\r\n# x86\r\n$ export PATH=\"/usr/local/bin:$PATH\"\r\n$ alias abrew='arch -x86_64 /usr/local/bin/brew'\r\n\r\n# arm\r\n$ export PATH=\"/opt/homebrew/bin:$PATH\"\r\n$ alias brew='/opt/homebrew/bin/brew'\r\n```\r\n\r\n### 换源下载源\r\n\r\n```bash\r\n# Arm 版\r\n\r\ncd \"$(brew --repo)\"\r\ngit remote set-url origin [git://mirrors](git://mirrors).[ustc.edu.cn/brew.git](http://ustc.edu.cn/brew.git)\r\ncd \"$(brew --repo)/Library/Taps/homebrew/homebrew-core\"\r\ngit remote set-url origin [git://mirrors](git://mirrors).[ustc.edu.cn/homebrew-core.git](http://ustc.edu.cn/homebrew-core.git)\r\n\r\n# intel版\r\ncd \"$(abrew --repo)\"\r\ngit remote set-url origin [git://mirrors](git://mirrors).[ustc.edu.cn/brew.git](http://ustc.edu.cn/brew.git)\r\ncd \"$(abrew --repo)/Library/Taps/homebrew/homebrew-core\"\r\ngit remote set-url origin [git://mirrors](git://mirrors).[ustc.edu.cn/homebrew-core.git](http://ustc.edu.cn/homebrew-core.git)\r\n\r\nbash用户：\r\necho 'export HOMEBREW_BOTTLE_DOMAIN=[https://mirrors](https://mirrors/).[ustc.edu.cn/homebrew-bottles](http://ustc.edu.cn/homebrew-bottles)' >> ~/.bash_profile\r\nsource ~/.bash_profile\r\nzsh用户：\r\necho 'export HOMEBREW_BOTTLE_DOMAIN=[https://mirrors](https://mirrors/).[ustc.edu.cn/homebrew-bottles](http://ustc.edu.cn/homebrew-bottles)' >> ~/.zshrc\r\nsource ~/.zshrc\r\n```",
+      "data": {
+        "title": "Mac Homebrew 安装与使用",
+        "date": "2021-01-15 12:09:09",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "mac-homebrew-an-zhuang-yu-shi-yong"
+    },
+    {
+      "content": "- **文本过滤**\r\n\r\n    ```python\r\n    def review_to_words(data):\r\n        \r\n        # 正则去除表情\r\n        emoji_pattern = re.compile(u'[\\U00010000-\\U0010ffff]')\r\n        data = emoji_pattern.sub(u'', data)\r\n        \r\n        # 正则去除标点\r\n        fuhao_pattern = re.compile(u'\\.*')\r\n        data = fuhao_pattern.sub(u'', data)\r\n        \r\n        # 正则去除数字\r\n        digit_pattern = re.compile(u'\\d+')\r\n        data = digit_pattern.sub(u'', data)\r\n        \r\n        # 空格拆分词语\r\n        words = data.lower().split()\r\n        \r\n        # 去掉rmSignal\r\n        meaningful_words = [w for w in words if not w in rmSignal]\r\n        \r\n        # 将筛分好的词合成一个字符串，并用空格分开\r\n        words = \" \".join(meaningful_words)\r\n        return words\r\n    ```",
+      "data": {
+        "title": "数据清洗",
+        "date": "2021-01-03 12:17:54",
+        "tags": [
+          "数据挖掘"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "chang-yong-shu-ju-qing-xi"
+    },
+    {
+      "content": "\r\n#****git提交文件****\r\n\r\n- 添加文件：`git add 文件名git add -A` 一键add\r\n- 提交文件:`git commit -m \"提交文件时的说明\"`\r\n- 推送到远程仓库:普通推送: `git push`强行推送: `git push -u origin master -f`\r\n\r\n**一、本地操作：**\r\n\r\n**1.其它**\r\n\r\ngit init：初始化本地库\r\n\r\ngit status：查看工作区、暂存区的状态\r\n\r\ngit add <file name>：将工作区的“新建/修改”添加到暂存区\r\n\r\ngit rm --cached <file name>：移除暂存区的修改\r\n\r\ngit commit <file name>：将暂存区的内容提交到本地库\r\n\r\ntip：需要再编辑提交日志，比较麻烦，建议用下面带参数的提交方法\r\n\r\ngit commit -m \"提交日志\" <file name>：文件从暂存区到本地库\r\n\r\n**2.日志**\r\n\r\ngit log：查看历史提交\r\n\r\ntip：空格向下翻页，b向上翻页，q退出\r\n\r\ngit log --pretty=oneline：以漂亮的一行显示，包含全部哈希索引值\r\n\r\ngit log --oneline：以简洁的一行显示，包含简洁哈希索引值\r\n\r\ngit reflog：以简洁的一行显示，包含简洁哈希索引值，同时显示移动到某个历史版本所需的步数\r\n\r\n**3.版本控制**\r\n\r\ngit reset --hard 简洁/完整哈希索引值：回到指定哈希值所对应的版本\r\n\r\ngit reset --hard HEAD：强制工作区、暂存区、本地库为当前HEAD指针所在的版本\r\n\r\ngit reset --hard HEAD^：后退一个版本\r\n\r\ntip：一个^表示回退一个版本\r\n\r\ngit reset --hard HEAD~1：后退一个版本\r\n\r\ntip：波浪线~后面的数字表示后退几个版本\r\n\r\n**4.比较差异**\r\n\r\ngit diff：比较工作区和暂存区的**所有文件**差异\r\n\r\ngit diff <file name>：比较工作区和暂存区的**指定文件**的差异\r\n\r\ngit diff HEAD|HEAD^|HEAD~|哈希索引值 <file name>：比较工作区跟本地库的某个版本的**指定文件**的差异\r\n\r\n**5.分支操作**\r\n\r\ngit branch -v：查看所有分支\r\n\r\ngit branch -d <分支名>：删除本地分支\r\n\r\ngit branch <分支名>：新建分支\r\n\r\ngit checkout <分支名>：切换分支\r\n\r\ngit merge <被合并分支名>：合并分支\r\n\r\ntip：如master分支合并 hot_fix分支，那么当前必须处于master分支上，然后执行 git merge hot_fix 命令\r\n\r\ntip2：合并出现冲突\r\n\r\n①删除git自动标记符号，如<<<<<<< HEAD、>>>>>>>等\r\n\r\n②修改到满意后，保存退出\r\n\r\n③git add <file name>\r\n\r\n④git commit -m \"日志信息\"，此时后面不要带文件名\r\n\r\n**二、本地库跟远程库交互：**\r\n\r\ngit clone <远程库地址>：克隆远程库\r\n\r\n功能：①完整的克隆远程库为本地库，②为本地库新建origin别名，③初始化本地库\r\n\r\ngit remote -v：查看远程库地址别名\r\n\r\ngit remote add <别名> <远程库地址>：新建远程库地址别名\r\n\r\ngit remote rm <别名>：删除本地中远程库别名\r\n\r\ngit push <别名> <分支名>：本地库某个分支推送到远程库，分支必须指定\r\n\r\ngit pull <别名> <分支名>：把远程库的修改拉取到本地\r\n\r\ntip：该命令包括git fetch，git merge\r\n\r\ngit fetch <远程库别名> <远程库分支名>：抓取远程库的指定分支到本地，但没有合并\r\n\r\ngit merge <远程库别名/远程库分支名>：将抓取下来的远程的分支，跟当前所在分支进行合并\r\n\r\ngit fork：复制远程库\r\n\r\ntip：一般是外面团队的开发人员fork本团队项目，然后进行开发，之后外面团队发起pull request，然后本团队进行审核，如无问题本团队进行merge（合并）到团队自己的远程库，整个流程就是本团队跟外面团队的协同开发流程，Linux的团队开发成员即为这种工作方式。\r\n\r\n### 三、创建git\r\n\r\n```bash\r\ngit remote add origin https://github.com/zhousanfu/digital_monitoring_liunx.git\r\ngit push origin master\r\n```",
+      "data": {
+        "title": "Git 使用之命令行篇",
+        "date": "2020-02-26 17:06:14",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "git-shi-yong-ming-zhi-ling-xing-pian"
+    },
+    {
+      "content": "Jupyter Notebook 是数据科学 / 机器学习社区内一款非常流行的工具\r\n\r\n最近入手了一台新的服务器，于是我想到将 Jupyter 搭建到服务器上，在任何只要有浏览器的地方都能进行 Python 编程\r\n\r\n我的服务器是 ubuntu 的，不同系统根据自己系统的命令进行操作\r\n\r\n### **创建用户、切换用户展开目录**\r\n\r\n首先在 root 用户下打开防火墙 8888 端口，这是提供 Jupyter 服务的端口\r\n\r\n```\r\nsudo ufw allow 8888\r\n\r\n```\r\n\r\n然后创建一个用户名为 `mathor` 的用户\r\n\r\n```\r\nsudo adduser mathor\r\n\r\n```\r\n\r\n输入密码并确认密码\r\n\r\n然后一路 Enter，默认就行，最后输入 `y` 确认一下\r\n\r\n然后切换到新用户，并进入当前用户的主目录\r\n\r\n```\r\nsu mathor\r\n\r\ncd ~\r\n\r\n```\r\n\r\n### **下载并安装 Anaconda展开目录**\r\n\r\nAnaconda 的 Linux 下载网址是 **[https://www.anaconda.com/download/#linux](https://www.anaconda.com/download/#linux)**\r\n\r\n截止到今天的最新版本是 2018.12，所以通过命令下载\r\n\r\n```\r\nwget https://repo.continuum.io/archive/Anaconda3-2018.12-Linux-x86_64.sh\r\n\r\n```\r\n\r\n下载完成后运行\r\n\r\n```\r\nbash Anaconda3-2018.12-Linux-x86_64.sh\r\n\r\n```\r\n\r\n之后会有一个协议，输入 `yes`，然后会有安装路径选择，按下 Enter 就是默认路径，之后会问是否要加入到环境变量，输入 `yes`，之后问要不要安装 vs code，输入 `no`。最后安装完成，输入\r\n\r\n```\r\njupyter\r\n\r\n```\r\n\r\n按两下 tab 键提示很多东西，就证明通过 Anaconda 安装 Jupyter 成功了，如果没有反应，同时发现输入 `conda` 没有命令，那么执行下面两步就可以了\r\n\r\n```\r\necho 'export PATH=\"~/anaconda3/bin:$PATH\"'>>~/.bashrc\r\n\r\nsource ~/.bashrc\r\n\r\n```\r\n\r\n### **配置 Jupyter展开目录**\r\n\r\n运行命令\r\n\r\n```\r\njupyter-notebook --generate-config\r\n\r\n```\r\n\r\n这时看到一个反馈\r\n\r\n```\r\nWritingdefault config to:/home/mathor/.jupyter/jupyter_notebook_config.py\r\n\r\n```\r\n\r\n这就是配置的目录。然后运行命令\r\n\r\n```\r\njupyter-notebook password\r\n\r\n```\r\n\r\n输入密码并确认，这就是以后登陆的密码\r\n\r\n输入命令\r\n\r\n```\r\nvi .jupyter/jupyter_notebook_config.json\r\n\r\n```\r\n\r\n可以看到有一个字符串 `sha1:xxxxxxx`，复制下来，一会要用到。然后运行命令\r\n\r\n```\r\nmkdir jupyterdata\r\n\r\n```\r\n\r\n创造一个文件夹存放 jupyter 的代码。最后配置端口与代码存放路径\r\n\r\n```\r\nvi .jupyter/jupyter_notebook_config.py\r\n\r\n```\r\n\r\n随便在空白处写上下面的关键配置即可：\r\n\r\n```\r\n# 设置默认目录\r\n\r\nc.NotebookApp.notebook_dir = u'/home/mathor/jupyterdata'\r\n\r\n# 允许通过任意绑定服务器的ip访问\r\n\r\nc.NotebookApp.ip = '*'\r\n\r\n# 用于访问的端口\r\n\r\nc.NotebookApp.port = 8888\r\n\r\n# 不自动打开浏览器\r\n\r\nc.NotebookApp.open_browser = False\r\n\r\n# 设置登录密码\r\n\r\nc.NotebookApp.password = u'sha1:xxxxxxxxxxxxxxxx'\r\n\r\n```\r\n\r\n保存并退出（按下 ESC，输入`:wq` 回车）\r\n\r\n然后运行\r\n\r\n```\r\njupyter-notebook\r\n\r\n```\r\n\r\n如果出现下面的报错\r\n\r\n```\r\nPermissionError: [Errno 13] Permission denied: '/run/user/xxxx/jupyter'\r\n\r\n```\r\n\r\n则输入\r\n\r\n```\r\nexport XDG_RUNTIME_DIR=\"/home/mathor/anaconda3\"\r\n\r\nsource .bashrc\r\n\r\njupyter-notebook\r\n\r\n```\r\n\r\n然后就 OK 了\r\n\r\n### **本地测试展开目录**\r\n\r\n随便在一个客户机浏览器里输入 `http://ip:8888` 就可以进入 Jupyter 的登陆界面了",
+      "data": {
+        "title": "搭建云端 Jupyter",
+        "date": "2020-02-09 12:28:42",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "da-jian-yun-duan-jupyter"
+    },
+    {
+      "content": "### **Byte Pair Encoding**\r\n\r\n在 NLP 模型中，输入通常是一个句子，例如 `\"I went to New York last week.\"`，一句话中包含很多单词（token）。传统的做法是将这些单词以空格进行分隔，例如 `['i', 'went', 'to', 'New', 'York', 'last', 'week']`。然而这种做法存在很多问题，例如模型无法通过 `old, older, oldest` 之间的关系学到 `smart, smarter, smartest` 之间的关系。如果我们能使用将一个 token 分成多个 subtokens，上面的问题就能很好的解决。本文将详述目前比较常用的 subtokens 算法 ——BPE（Byte-Pair Encoding）\r\n\r\n现在性能比较好一些的 NLP 模型，例如 GPT、BERT、RoBERTa 等，在数据预处理的时候都会有 WordPiece 的过程，其主要的实现方式就是 BPE（Byte-Pair Encoding）。具体来说，例如 `['loved', 'loving', 'loves']` 这三个单词。其实本身的语义都是 \"爱\" 的意思，但是如果我们以词为单位，那它们就算不一样的词，在英语中不同后缀的词非常的多，就会使得词表变的很大，训练速度变慢，训练的效果也不是太好。BPE 算法通过训练，能够把上面的 3 个单词拆分成 `[\"lov\",\"ed\",\"ing\",\"es\"]` 几部分，这样可以把词的本身的意思和时态分开，有效的减少了词表的数量。算法流程如下：\r\n\r\n1. 设定最大 subwords 个数\r\n\r\n    V\r\n\r\n2. 将所有单词拆分为单个字符，并在最后添加一个停止符 `</w>`，同时标记出该单词出现的次数。例如，`\"low\"` 这个单词出现了 5 次，那么它将会被处理为 `{'l o w </w>': 5}`\r\n3. 统计每一个连续**字节对**的出现频率，选择最高频者合并成新的 subword\r\n4. 重复第 3 步直到达到第 1 步设定的 subwords 词表大小或下一个最高频的**字节对**出现频率为 1\r\n\r\n例如\r\n\r\n```\r\n{'l o w </w>': 5, 'l o w e r </w>': 2, 'n e w e s t </w>': 6, 'w i d e s t </w>': 3}\r\n\r\n```\r\n\r\n出现最频繁的字节对是**`e`**和**`s`**，共出现了 6+3=9 次，因此将它们合并\r\n\r\n```\r\n{'l o w </w>': 5, 'l o w e r </w>': 2, 'n e w es t </w>': 6, 'w i d es t </w>': 3}\r\n\r\n```\r\n\r\n出现最频繁的字节对是**`es`**和**`t`**，共出现了 6+3=9 次，因此将它们合并\r\n\r\n```\r\n{'l o w </w>': 5, 'l o w e r </w>': 2, 'n e w est </w>': 6, 'w i d est </w>': 3}\r\n\r\n```\r\n\r\n出现最频繁的字节对是**`est`**和**`</w>`**，共出现了 6+3=9 次，因此将它们合并\r\n\r\n```\r\n{'l o w </w>': 5, 'l o w e r </w>': 2, 'n e w est</w>': 6, 'w i d est</w>': 3}\r\n\r\n```\r\n\r\n出现最频繁的字节对是**`l`**和**`o`**，共出现了 5+2=7 次，因此将它们合并\r\n\r\n```\r\n{'lo w </w>': 5, 'lo w e r </w>': 2, 'n e w est</w>': 6, 'w i d est</w>': 3}\r\n\r\n```\r\n\r\n出现最频繁的字节对是**`lo`**和**`w`**，共出现了 5+2=7 次，因此将它们合并\r\n\r\n```\r\n{'low </w>': 5, 'low e r </w>': 2, 'n e w est</w>': 6, 'w i d est</w>': 3}\r\n\r\n```\r\n\r\n...... 继续迭代直到达到预设的 subwords 词表大小或下一个最高频的字节对出现频率为 1。这样我们就得到了更加合适的词表，这个词表可能会出现一些不是单词的组合，但是其本身有意义的一种形式\r\n\r\n停止符 `</w>` 的意义在于表示 subword 是词后缀。举例来说：`st` 不加 `</w>` 可以出现在词首，如 `st ar`；加了 `</w>` 表明改字词位于词尾，如 `wide st</w>`，二者意义截然不同\r\n\r\n### **BPE 实现**\r\n\r\n```\r\nimport re, collections\r\n\r\ndefget_vocab(filename):\r\n\r\n    vocab = collections.defaultdict(int)\r\n\r\nwith open(filename, 'r', encoding='utf-8')as fhand:\r\n\r\nfor linein fhand:\r\n\r\n            words = line.strip().split()\r\n\r\nfor wordin words:\r\n\r\n                vocab[' '.join(list(word)) + ' </w>'] += 1\r\n\r\nreturn vocab\r\n\r\ndefget_stats(vocab):\r\n\r\n    pairs = collections.defaultdict(int)\r\n\r\nfor word, freqin vocab.items():\r\n\r\n        symbols = word.split()\r\n\r\nfor iin range(len(symbols)-1):\r\n\r\n            pairs[symbols[i],symbols[i+1]] += freq\r\n\r\nreturn pairs\r\n\r\ndefmerge_vocab(pair, v_in):\r\n\r\n    v_out = {}\r\n\r\n    bigram = re.escape(' '.join(pair))\r\n\r\n    p = re.compile(r'(?<!\\S)' + bigram + r'(?!\\S)')\r\n\r\nfor wordin v_in:\r\n\r\n        w_out = p.sub(''.join(pair), word)\r\n\r\n        v_out[w_out] = v_in[word]\r\n\r\nreturn v_out\r\n\r\ndefget_tokens(vocab):\r\n\r\n    tokens = collections.defaultdict(int)\r\n\r\nfor word, freqin vocab.items():\r\n\r\n        word_tokens = word.split()\r\n\r\nfor tokenin word_tokens:\r\n\r\n            tokens[token] += freq\r\n\r\nreturn tokens\r\n\r\nvocab = {'l o w </w>': 5, 'l o w e r </w>': 2, 'n e w e s t </w>': 6, 'w i d e s t </w>': 3}\r\n\r\n# Get free book from Gutenberg\r\n\r\n# wget http://www.gutenberg.org/cache/epub/16457/pg16457.txt\r\n\r\n# vocab = get_vocab('pg16457.txt')\r\n\r\nprint('==========')\r\n\r\nprint('Tokens Before BPE')\r\n\r\ntokens = get_tokens(vocab)\r\n\r\nprint('Tokens: {}'.format(tokens))\r\n\r\nprint('Number of tokens: {}'.format(len(tokens)))\r\n\r\nprint('==========')\r\n\r\nnum_merges = 5\r\n\r\nfor iin range(num_merges):\r\n\r\n    pairs = get_stats(vocab)\r\n\r\nifnot pairs:\r\n\r\nbreak\r\n    best = max(pairs, key=pairs.get)\r\n\r\n    vocab = merge_vocab(best, vocab)\r\n\r\n    print('Iter: {}'.format(i))\r\n\r\n    print('Best pair: {}'.format(best))\r\n\r\n    tokens = get_tokens(vocab)\r\n\r\n    print('Tokens: {}'.format(tokens))\r\n\r\n    print('Number of tokens: {}'.format(len(tokens)))\r\n\r\n    print('==========')\r\n\r\n```\r\n\r\n输出如下\r\n\r\n```\r\n==========\r\n\r\nTokens Before BPE\r\n\r\nTokens: defaultdict(<class 'int'>, {'l': 7, 'o': 7, 'w': 16, '</w>': 16, 'e': 17, 'r': 2, 'n': 6, 's': 9, 't': 9, 'i': 3, 'd': 3})\r\n\r\nNumber of tokens: 11\r\n\r\n==========\r\n\r\nIter: 0\r\n\r\nBest pair: ('e', 's')\r\n\r\nTokens: defaultdict(<class 'int'>, {'l': 7, 'o': 7, 'w': 16, '</w>': 16, 'e': 8, 'r': 2, 'n': 6, 'es': 9, 't': 9, 'i': 3, 'd': 3})\r\n\r\nNumber of tokens: 11\r\n\r\n==========\r\n\r\nIter: 1\r\n\r\nBest pair: ('es', 't')\r\n\r\nTokens: defaultdict(<class 'int'>, {'l': 7, 'o': 7, 'w': 16, '</w>': 16, 'e': 8, 'r': 2, 'n': 6, 'est': 9, 'i': 3, 'd': 3})\r\n\r\nNumber of tokens: 10\r\n\r\n==========\r\n\r\nIter: 2\r\n\r\nBest pair: ('est', '</w>')\r\n\r\nTokens: defaultdict(<class 'int'>, {'l': 7, 'o': 7, 'w': 16, '</w>': 7, 'e': 8, 'r': 2, 'n': 6, 'est</w>': 9, 'i': 3, 'd': 3})\r\n\r\nNumber of tokens: 10\r\n\r\n==========\r\n\r\nIter: 3\r\n\r\nBest pair: ('l', 'o')\r\n\r\nTokens: defaultdict(<class 'int'>, {'lo': 7, 'w': 16, '</w>': 7, 'e': 8, 'r': 2, 'n': 6, 'est</w>': 9, 'i': 3, 'd': 3})\r\n\r\nNumber of tokens: 9\r\n\r\n==========\r\n\r\nIter: 4\r\n\r\nBest pair: ('lo', 'w')\r\n\r\nTokens: defaultdict(<class 'int'>, {'low': 7, '</w>': 7, 'e': 8, 'r': 2, 'n': 6, 'w': 9, 'est</w>': 9, 'i': 3, 'd': 3})\r\n\r\nNumber of tokens: 9\r\n\r\n==========\r\n\r\n```\r\n\r\n### **编码和解码**\r\n\r\n### **编码**\r\n\r\n在之前的算法中，我们已经得到了 subword 的词表，对该词表按照字符个数由多到少排序。编码时，对于每个单词，遍历排好序的子词词表寻找是否有 token 是当前单词的子字符串，如果有，则该 token 是表示单词的 tokens 之一\r\n\r\n我们从最长的 token 迭代到最短的 token，尝试将每个单词中的子字符串替换为 token。 最终，我们将迭代所有 tokens，并将所有子字符串替换为 tokens。 如果仍然有子字符串没被替换但所有 token 都已迭代完毕，则将剩余的子词替换为特殊 token，如 `<unk>`\r\n\r\n例如\r\n\r\n```\r\n# 给定单词序列\r\n\r\n[\"the</w>\", \"highest</w>\", \"mountain</w>\"]\r\n\r\n# 排好序的subword表\r\n\r\n# 长度 6         5           4        4         4       4          2\r\n\r\n[\"errrr</w>\", \"tain</w>\", \"moun\", \"est</w>\", \"high\", \"the</w>\", \"a</w>\"]\r\n\r\n# 迭代结果\r\n\r\n\"the</w>\" -> [\"the</w>\"]\r\n\r\n\"highest</w>\" -> [\"high\", \"est</w>\"]\r\n\r\n\"mountain</w>\" -> [\"moun\", \"tain</w>\"]\r\n\r\n```\r\n\r\n### **解码**\r\n\r\n将所有的 tokens 拼在一起即可，例如\r\n\r\n```\r\n# 编码序列\r\n\r\n[\"the</w>\", \"high\", \"est</w>\", \"moun\", \"tain</w>\"]\r\n\r\n# 解码序列\r\n\r\n\"the</w> highest</w> mountain</w>\"\r\n\r\n```\r\n\r\n### **编码和解码实现**\r\n\r\n```\r\nimport re, collections\r\n\r\ndefget_vocab(filename):\r\n\r\n    vocab = collections.defaultdict(int)\r\n\r\nwith open(filename, 'r', encoding='utf-8')as fhand:\r\n\r\nfor linein fhand:\r\n\r\n            words = line.strip().split()\r\n\r\nfor wordin words:\r\n\r\n                vocab[' '.join(list(word)) + ' </w>'] += 1\r\n\r\nreturn vocab\r\n\r\ndefget_stats(vocab):\r\n\r\n    pairs = collections.defaultdict(int)\r\n\r\nfor word, freqin vocab.items():\r\n\r\n        symbols = word.split()\r\n\r\nfor iin range(len(symbols)-1):\r\n\r\n            pairs[symbols[i],symbols[i+1]] += freq\r\n\r\nreturn pairs\r\n\r\ndefmerge_vocab(pair, v_in):\r\n\r\n    v_out = {}\r\n\r\n    bigram = re.escape(' '.join(pair))\r\n\r\n    p = re.compile(r'(?<!\\S)' + bigram + r'(?!\\S)')\r\n\r\nfor wordin v_in:\r\n\r\n        w_out = p.sub(''.join(pair), word)\r\n\r\n        v_out[w_out] = v_in[word]\r\n\r\nreturn v_out\r\n\r\ndefget_tokens_from_vocab(vocab):\r\n\r\n    tokens_frequencies = collections.defaultdict(int)\r\n\r\n    vocab_tokenization = {}\r\n\r\nfor word, freqin vocab.items():\r\n\r\n        word_tokens = word.split()\r\n\r\nfor tokenin word_tokens:\r\n\r\n            tokens_frequencies[token] += freq\r\n\r\n        vocab_tokenization[''.join(word_tokens)] = word_tokens\r\n\r\nreturn tokens_frequencies, vocab_tokenization\r\n\r\ndefmeasure_token_length(token):\r\n\r\nif token[-4:] == '</w>':\r\n\r\nreturn len(token[:-4]) + 1\r\n\r\nelse:\r\n\r\nreturn len(token)\r\n\r\ndeftokenize_word(string, sorted_tokens, unknown_token='</u>'):\r\n\r\nif string == '':\r\n\r\nreturn []\r\n\r\nif sorted_tokens == []:\r\n\r\nreturn [unknown_token]\r\n\r\n    string_tokens = []\r\n\r\nfor iin range(len(sorted_tokens)):\r\n\r\n        token = sorted_tokens[i]\r\n\r\n        token_reg = re.escape(token.replace('.', '[.]'))\r\n\r\n        matched_positions = [(m.start(0), m.end(0))for min re.finditer(token_reg, string)]\r\n\r\nif len(matched_positions) == 0:\r\n\r\ncontinue\r\n        substring_end_positions = [matched_position[0]for matched_positionin matched_positions]\r\n\r\n        substring_start_position = 0\r\n\r\nfor substring_end_positionin substring_end_positions:\r\n\r\n            substring = string[substring_start_position:substring_end_position]\r\n\r\n            string_tokens += tokenize_word(string=substring, sorted_tokens=sorted_tokens[i+1:], unknown_token=unknown_token)\r\n\r\n            string_tokens += [token]\r\n\r\n            substring_start_position = substring_end_position + len(token)\r\n\r\n        remaining_substring = string[substring_start_position:]\r\n\r\n        string_tokens += tokenize_word(string=remaining_substring, sorted_tokens=sorted_tokens[i+1:], unknown_token=unknown_token)\r\n\r\nbreak\r\nreturn string_tokens\r\n\r\n# vocab = {'l o w </w>': 5, 'l o w e r </w>': 2, 'n e w e s t </w>': 6, 'w i d e s t </w>': 3}\r\n\r\nvocab = get_vocab('pg16457.txt')\r\n\r\nprint('==========')\r\n\r\nprint('Tokens Before BPE')\r\n\r\ntokens_frequencies, vocab_tokenization = get_tokens_from_vocab(vocab)\r\n\r\nprint('All tokens: {}'.format(tokens_frequencies.keys()))\r\n\r\nprint('Number of tokens: {}'.format(len(tokens_frequencies.keys())))\r\n\r\nprint('==========')\r\n\r\nnum_merges = 10000\r\n\r\nfor iin range(num_merges):\r\n\r\n    pairs = get_stats(vocab)\r\n\r\nifnot pairs:\r\n\r\nbreak\r\n    best = max(pairs, key=pairs.get)\r\n\r\n    vocab = merge_vocab(best, vocab)\r\n\r\n    print('Iter: {}'.format(i))\r\n\r\n    print('Best pair: {}'.format(best))\r\n\r\n    tokens_frequencies, vocab_tokenization = get_tokens_from_vocab(vocab)\r\n\r\n    print('All tokens: {}'.format(tokens_frequencies.keys()))\r\n\r\n    print('Number of tokens: {}'.format(len(tokens_frequencies.keys())))\r\n\r\n    print('==========')\r\n\r\n# Let's check how tokenization will be for a known word\r\n\r\nword_given_known = 'mountains</w>'\r\n\r\nword_given_unknown = 'Ilikeeatingapples!</w>'\r\n\r\nsorted_tokens_tuple = sorted(tokens_frequencies.items(), key=lambda item: (measure_token_length(item[0]), item[1]), reverse=True)\r\n\r\nsorted_tokens = [tokenfor (token, freq)in sorted_tokens_tuple]\r\n\r\nprint(sorted_tokens)\r\n\r\nword_given = word_given_known\r\n\r\nprint('Tokenizing word: {}...'.format(word_given))\r\n\r\nif word_givenin vocab_tokenization:\r\n\r\n    print('Tokenization of the known word:')\r\n\r\n    print(vocab_tokenization[word_given])\r\n\r\n    print('Tokenization treating the known word as unknown:')\r\n\r\n    print(tokenize_word(string=word_given, sorted_tokens=sorted_tokens, unknown_token='</u>'))\r\n\r\nelse:\r\n\r\n    print('Tokenizating of the unknown word:')\r\n\r\n    print(tokenize_word(string=word_given, sorted_tokens=sorted_tokens, unknown_token='</u>'))\r\n\r\nword_given = word_given_unknown\r\n\r\nprint('Tokenizing word: {}...'.format(word_given))\r\n\r\nif word_givenin vocab_tokenization:\r\n\r\n    print('Tokenization of the known word:')\r\n\r\n    print(vocab_tokenization[word_given])\r\n\r\n    print('Tokenization treating the known word as unknown:')\r\n\r\n    print(tokenize_word(string=word_given, sorted_tokens=sorted_tokens, unknown_token='</u>'))\r\n\r\nelse:\r\n\r\n    print('Tokenizating of the unknown word:')\r\n\r\n    print(tokenize_word(string=word_given, sorted_tokens=sorted_tokens, unknown_token='</u>'))\r\n\r\n```\r\n\r\n输出如下\r\n\r\n```\r\nTokenizing word: mountains</w>...\r\n\r\nTokenizationof the known word:\r\n\r\n['mountains</w>']\r\n\r\nTokenization treating the known wordas unknown:\r\n\r\n['mountains</w>']\r\n\r\nTokenizing word: Ilikeeatingapples!</w>...\r\n\r\nTokenizatingof the unknown word:\r\n\r\n['I', 'like', 'ea', 'ting', 'app', 'l', 'es!</w>']\r\n\r\n```\r\n\r\n### **Reference**\r\n\r\n- **[3 subword algorithms help to improve your NLP model performance](https://medium.com/@makcedward/how-subword-helps-on-your-nlp-model-83dd1b836f46)**\r\n- **[Tokenizers: How machines read](https://blog.floydhub.com/tokenization-nlp/)**\r\n- **[Overview of tokenization algorithms in NLP](https://towardsdatascience.com/overview-of-nlp-tokenization-algorithms-c41a7d5ec4f9)**\r\n- **[一文读懂 BERT 中的 WordPiece](https://www.cnblogs.com/huangyc/p/10223075.html)**\r\n- **[Byte Pair Encoding](https://leimao.github.io/blog/Byte-Pair-Encoding/)**\r\n- **[深入理解 NLP Subword 算法：BPE、WordPiece、ULM](https://zhuanlan.zhihu.com/p/86965595)**",
+      "data": {
+        "title": "BPE 算法详解",
+        "date": "2020-02-03 09:19:23",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "bpe-suan-fa-xiang-jie"
+    },
+    {
+      "content": "一、异常问题\r\n===============\r\n## Gitalk-设置后连接403原因：\r\n![](https://zhousanfu.github.io/post-images/1614321281694.png)\r\n解决方法：访问-[申请解开封锁](https://cors-anywhere.herokuapp.com/corsdemo)\r\n返回：You currently have temporary access to the demo server，就可。\r\n\r\n--官方文档解释：https://github.com/Rob--W/cors-anywhere/issues/301\r\n",
+      "data": {
+        "title": "GithubPages与Gitalk 的总结与异常",
+        "date": "2020-01-26 14:13:35",
+        "tags": [
+          "前端",
+          "Gridea"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "gitalk-de-zong-jie-yu-yi-chang"
+    },
+    {
+      "content": "新手友好 [Markdown 入门参考](https://xianbai.me/learn-md/index.html)",
+      "data": {
+        "title": "Learning-Markdown (Markdown 入门参考)",
+        "date": "2019-02-26 16:46:00",
+        "tags": [],
+        "published": true,
+        "hideInList": false,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "learning-markdown-markdown-ru-men-can-kao"
+    },
+    {
+      "content": "👏  欢迎使用 **Gridea** ！  \n✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... \n\n<!-- more -->\n\n[Github](https://github.com/getgridea/gridea)  \n[Gridea 主页](https://gridea.dev/)  \n[示例网站](http://fehey.com/)\n\n## 特性👇\n📝  你可以使用最酷的 **Markdown** 语法，进行快速创作  \n\n🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片  \n\n🏷️  你可以对文章进行标签分组  \n\n📋  你可以自定义菜单，甚至可以创建外部链接菜单  \n\n💻  你可以在 **Windows**，**MacOS** 或 **Linux** 设备上使用此客户端  \n\n🌎  你可以使用 **𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌** 或 **Coding Pages** 向世界展示，未来将支持更多平台  \n\n💬  你可以进行简单的配置，接入 [Gitalk](https://github.com/gitalk/gitalk) 或 [DisqusJS](https://github.com/SukkaW/DisqusJS) 评论系统  \n\n🇬🇧  你可以使用**中文简体**或**英语**  \n\n🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力  \n\n🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步  \n\n🌱 当然 **Gridea** 还很年轻，有很多不足，但请相信，它会不停向前 🏃\n\n未来，它一定会成为你离不开的伙伴\n\n尽情发挥你的才华吧！\n\n😘 Enjoy~\n",
+      "data": {
+        "title": "Hello Gridea",
+        "date": "2019-02-05 09:05:06",
+        "tags": [
+          "Gridea"
+        ],
+        "published": true,
+        "hideInList": false,
+        "feature": "/post-images/hello-gridea.png",
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "👏  欢迎使用 **Gridea** ！  \n✍️  **Gridea** 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ... ",
+      "fileName": "hello-gridea"
+    },
+    {
+      "content": "> 欢迎来到我的小站呀，很高兴遇见你！🤝\n\n## 🏠 关于本站\n学习笔记\n\n## 👨‍💻 博主是谁\n周三甫\n\n## ⛹ 兴趣爱好\n\n## 📬 联系我呀\n\n",
+      "data": {
+        "title": "关于",
+        "date": "2019-01-25 19:09:48",
+        "tags": [],
+        "published": true,
+        "hideInList": true,
+        "feature": null,
+        "isTop": false
+      },
+      "isEmpty": false,
+      "excerpt": "",
+      "abstract": "",
+      "fileName": "about"
+    }
+  ],
+  "tags": [
+    {
+      "index": -1,
+      "name": "Tensorflow",
+      "slug": "Tensorflow",
+      "used": true
+    },
+    {
+      "index": -1,
+      "name": "数据挖掘",
+      "slug": "data-grub",
+      "used": true
+    },
+    {
+      "index": -1,
+      "name": "NLP",
+      "slug": "nlp",
+      "used": true
+    },
+    {
+      "index": -1,
+      "name": "前端",
+      "slug": "front_end",
+      "used": true
+    },
+    {
+      "name": "Gridea",
+      "slug": "xyBbGRwYX",
+      "used": true
+    }
+  ],
+  "menus": [
+    {
+      "link": "/",
+      "name": "首页",
+      "openType": "Internal"
+    },
+    {
+      "link": "/archives",
+      "name": "归档",
+      "openType": "Internal"
+    },
+    {
+      "link": "/tags",
+      "name": "标签",
+      "openType": "Internal"
+    },
+    {
+      "link": "/post/about",
+      "name": "关于",
+      "openType": "Internal"
+    }
+  ]
+}
