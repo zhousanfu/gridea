@@ -1,2 +1,0 @@
-# gridea
-gridea文件
